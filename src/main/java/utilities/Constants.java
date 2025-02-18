@@ -1,7 +1,14 @@
 package utilities;
 
 public interface Constants {
-    String FEATURE_FILE="src/test/resources/features";
-    String STEP_DEFINITION="stepDefinitions";
+    String SRC = "src";
+    String TEST = "test";
+    String RESOURCES = "resources";
+    String FEATURE = "features";
+    String CONFIGURATION = "configuration";
+    String FEATURE_FILE = SRC + "/" + TEST + "/" + RESOURCES + "/" + FEATURE;
+    String STEP_DEFINITION = "stepDefinitions";
+    String CONFIGURATION_DIRECTORY = SRC + "/" + TEST + "/" + RESOURCES + "/" + CONFIGURATION;
+    static String SCREEN_SHOT_FOLDER_PATH = "ScreenshotFolder/";
 }
 

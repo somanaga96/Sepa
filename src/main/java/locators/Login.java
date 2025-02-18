@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static utilities.BaseUtils.allureScreenShot;
+import static utilities.AllureUtils.allureScreenShot;
 
 public class Login {
     private WebDriver driver;

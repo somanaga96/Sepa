@@ -8,6 +8,7 @@ import utilities.BaseUtils;
 public class Hooks extends BaseUtils {
     @Before
     public void setUp(Scenario scenario) {
+        System.out.println("Scenario name :"+scenario.getName());
         createWebDriver(scenario);
     }
 
