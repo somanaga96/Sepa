@@ -1,0 +1,55 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08">
+    <FIToFICstmrCdtTrf>
+        <GrpHdr>
+            <MsgId>UniquePaymentID</MsgId>
+            <CreDtTm>2023-12-12T10:30:00</CreDtTm>
+            <NbOfTxs>1</NbOfTxs>
+            <CtrlSum>AmountTotal</CtrlSum>
+            <InitgPty>
+                <Nm>Initiating Bank</Nm>
+                <PstlAdr>
+                    <AdrLine>Address Line 1</AdrLine>
+                    <Ctry>Country Code</Ctry>
+                </PstlAdr>
+            </InitgPty>
+            <InstdPty>
+                <Nm>Receiving Bank</Nm>
+                <PstlAdr>
+                    <AdrLine>Address Line 2</AdrLine>
+                    <Ctry>Country Code</Ctry>
+                </PstlAdr>
+            </InstdPty>
+        </GrpHdr>
+        <CdtTrfTxInf>
+            <PmtId>
+                <InstrId>PaymentInstructionID</InstrId>
+                <EndToEndId>UniquePaymentReference</EndToEndId>
+            </PmtId>
+            <Amt>
+                <InstdAmt>
+                    <Ccy>EUR</Ccy>
+                    <Value>1000.00</Value>
+                </InstdAmt>
+            </Amt>
+            <CdtDtTm>2023-12-12</CdtDtTm>
+            <Dbtr>
+                <Nm>Debtor Name</Nm>
+                <Acct>
+                    <Id>
+                        <IBAN>DE123456789012345678</IBAN>
+                    </Id>
+                </Acct>
+            </Dbtr>
+            <Cdtr>
+                <Nm>Creditor Name</Nm>
+                <Acct>
+                    <Id>
+                        <IBAN>FR123456789012345678</IBAN>
+                    </Id>
+                </Acct>
+            </Cdtr>
+        </CdtTrfTxInf>
+    </FIToFICstmrCdtTrf>
+</Document>
+
+
