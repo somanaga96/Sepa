@@ -93,9 +93,9 @@ public class BaseUtils implements Constants {
     }
 
 
-
     public void createScreenShotFolder(String testCaseId, String sheetName) throws FilloException, IOException {
         String screenShotPath = ExcelReader.readExcel(getPropertyValue(configPropertyFilePath, "ExcelDataFilePath"), sheetName, testCaseId).get("ScreenShotPath");
+        System.out.println("ScreenShotPath :" + screenShotPath);
         final File htmlTemplateFile;
         File newHtmlFile;
         if (screenShotPath.isEmpty()) {
@@ -107,7 +107,7 @@ public class BaseUtils implements Constants {
             scenarioID = screenShotPath;
             runID = getUKCurrentDate("dd_MM_yyyy_HH_mm_ss", "BST");
             htmlTemplateFile = new File(Constants.SCREEN_SHOT_FOLDER_PATH + "screenshot_template.html");
-            newHtmlFile = new File(Constants.SCREEN_SHOT_FOLDER_PATH + scenarioID + "/" + scenarioID + ".html");
+            newHtmlFile = new File(Constants.SCREEN_SHOT_FOLDER_PATH + scenarioID + "/" +testCaseId+"-"+ runID + ".html");
         }
         String newHtmlStr = FileUtils.readFileToString(htmlTemplateFile, "UTF-8");
         newHtmlStr = newHtmlStr.replace("$testCaseId$", testCaseId);

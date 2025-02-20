@@ -6,7 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
+
 import static utilities.AllureUtils.allureScreenShot;
+import static utilities.AllureUtils.takeScreenShot;
 
 public class Login {
     private WebDriver driver;
@@ -21,15 +24,14 @@ public class Login {
     @FindBy(id = LoginLocators.PASSWORD)
     WebElement password;
     @FindBy(id = LoginLocators.LOGIN)
-    WebElement login;
+    public WebElement login;
 
-    public void enterUserNameAndPassword(String username, String pass) {
+    public void enterUserNameAndPassword(String username, String pass) throws IOException {
         System.out.println("check userj pass :" + username + "-" + pass);
 //        driver.findElement(By.xpath(LoginLocators.USER_NAME)).sendKeys(username);
         user_name.sendKeys(username);
         password.sendKeys(pass);
         allureScreenShot("user name and password entered");
-        login.click();
-        allureScreenShot("login clicked");
+        takeScreenShot("Username and Password entered");
     }
 }

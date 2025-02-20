@@ -30,4 +30,13 @@ public class ExcelReader {
         connection.close();
         return data;
     }
+
+    public static void updateValueUsingHeaderInExcel(String excelFilePath, String sheetName, String columnHeader, String testCaseId, String value) throws FilloException {
+        Fillo fillo = new Fillo();
+        Connection connection = fillo.getConnection(excelFilePath);
+        String updateQuery = String.format("UPDATE %s SET %s='%s' WHERE TestCaseID='%s'",
+                sheetName, columnHeader, value, testCaseId);
+        connection.executeUpdate(updateQuery);
+        connection.close();
+    }
 }

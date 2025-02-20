@@ -19,8 +19,8 @@ public class AllureUtils extends BaseUtils {
     }
 
     public static void takeScreenShot(String message) throws IOException {
-        String testCaseId = getScenarioContext().getScenarioContext("testCaseId").toString();
-        String sheetName = getScenarioContext().getScenarioContext("sheetName").toString();
+        String testCaseId = (String) getScenarioContext().getScenarioContext("testCaseId");
+        String sheetName = (String) getScenarioContext().getScenarioContext("sheetName");
         String screenshotAs = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
         File newHtmlFile = new File(Constants.SCREEN_SHOT_FOLDER_PATH + scenarioID + "/" + testCaseId + "-" + runID + ".html");
         String htmlString = FileUtils.readFileToString(newHtmlFile, "UTF-8");

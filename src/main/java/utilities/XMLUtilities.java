@@ -30,7 +30,7 @@ public class XMLUtilities {
     public static String updateXMLTemplate(String testCaseId, String sheetName) throws FilloException {
         Map<String, String> excelTestData = ExcelReader.readExcel(getPropertyValue(configPropertyFilePath, "ExcelDataFilePath"), sheetName, testCaseId);
         File messageFile = new File(TEMPLATE_DIRECTORY + "/" + "pacs008_template.xml");
-        String filePath = copyXMLFromTemplate(messageFile, SCREEN_SHOT_FOLDER_PATH + scenarioID + "/" + testCaseId + runID + "pacs008OutBound");
+        String filePath = copyXMLFromTemplate(messageFile, SCREEN_SHOT_FOLDER_PATH + scenarioID + "/" + testCaseId + "-" + runID + "pacs008OutBound");
         System.out.println("filepath :" + filePath);
         updateXMLDataFromExcel(filePath, "GrpHdr", "MsgId", 0, "check1");
         return filePath;
